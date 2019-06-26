@@ -1,0 +1,51 @@
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.radio--buttons {
+  text-align: center;
+}
+
+.start--button {
+  display: block;
+  margin: 20px auto;
+}
+
+.number {
+  text-align: center;
+}
+
+.guess--number {
+  display: block;
+  margin: 0 auto;
+  width: 20%;
+}
+
+.letters--container {
+  display: flex;
+  align-items: center;
+  width: 50%;
+  margin: 50px auto;
+  flex-wrap: wrap;
+}
+
+.letters--container-letter {
+  font-size: 20px;
+  height: 90px;
+  width: 90px;
+  font-weight: bold;
+}
+
+.letters--container-letter-correct {
+  color: green;
+}
+
+.letters--container-letter-wrong {
+  color: red;
+}
+.score--hit{
+  color:green;
+}
+.score--miss{
+  color:red;
+}

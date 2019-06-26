@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <link rel="stylesheet" href="GuessingGame.css">
+  <title>Guessing Game</title>
+</head>
+
+<body>
+
+  <div class="form--container">
+    <div class="form--container-information">
+        <form class="radio--buttons">
+            <input type="radio" name="difficult" value="easy" class="radio--buttons-button" /> Easy
+            <input type="radio" name="difficult" value="medium" class="radio--buttons-button" checked
+              id="default--radio-button" /> Medium
+            <input type="radio" name="difficult" value="hard" class="radio--buttons-button" /> Hard
+          </form>     
+          <button class="start--button">Start Game</button>
+          <h1 class="number">0</h1>
+          <h1 class="res"></h1>
+          <input type="text" class="guess--number" maxlength="1" disabled>
+    </div>
+    <div class="score--container">
+          <h2 class="score">Score</h2>
+          <h3 class="score--hit">Hit: 0</h3>
+          <h3 class="score--miss">Miss: 0</h3>
+          <h3 class="score--left">Left: 26</h3>
+    </div>
+</div>
+
+  <div class="letters--container"></div>
+
+  <script src="GuessingGame.js"></script>
+</body>
+
+</html>
