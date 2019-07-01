@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+    <title>Form Flow</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="FormFlow.css">
+    <link href="css/tox-progress.css" rel="stylesheet">
+    <script src="js/tox-progress.js"></script>
+</head>
+
+<body>
+
+
+    <div class="signup-form">
+        <form action="/examples/actions/confirmation.php" method="post">
+            <div class="navbar navbar-inverse" role="navigation">
+                <div class="navbar-text navbar-center">
+                    <div class="chart" data-percent="0" data-scale-color="#ffb400"><span class="perc">0%</span></div>
+                    <h5>New York State</h5>
+                    <h2>Request for Contact</h2>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="input-group">
+                    <span class="input-group-addon"><i class="fa fa-user"></i></span> First Name
+                    <br>
+                    <input type="text" class="form-control f-name" name="firstname" placeholder="" required="required">
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="input-group">
+                    <span class="input-group-addon"><i class="fa fa-paper-plane"></i></span> Last Name
+                    <input type="text" class="form-control l-name" name="lastname" placeholder="" required="required">
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="input-group">
+                    <span class="input-group-addon"><i class="fa fa-lock"></i></span> Email Address
+                    <input type="text" class="form-control email" name="email" placeholder="" required="required">
+                </div>
+            </div>
+            <div class="form-group">
+                <h4>What is the best time to contact you?</h4>
+                <br>
+                <div class="boxes">
+                    <input type="radio" name="day" id="box-1">
+                    <label for="box-1">Monday 3pm</label>
+                    <input type="radio" name="day" id="box-2">
+                    <label for="box-2"> Tuesday 3pm</label>
+                    <input type="radio" name="day" id="box-3">
+                    <label for="box-3"> Wednes 3pm</label>
+                    <input type="radio" name="day" id="box-4">
+                    <label for="box-4"> Thursday 3pm</label>
+                    <input type="radio" name="day" id="box-5">
+                    <label for="box-5"> Friday 3pm</label>
+                </div>
+            </div>
+            <br>
+            <div class="form-group">
+                <button type="submit" class="btn btn-primary btn-block btn-lg">Submit</button>
+            </div>
+
+        </form>
+
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <script src="jquery.easypiechart.min.js"></script>
+    <script src="main.js"></script>
+    <script>
+        $(function () {
+            var i = 0;
+            var f1 = 0 , f2= 0, f3 = 0, f4=0;
+            $('.chart').easyPieChart({
+                //your options goes here
+                barColor: '#FFF',
+                scaleColor: false,
+                trackColor: '#6cc0e5',
+                lineWidth: 2,
+                lineCap: 'circle',
+                scaleLength: 0,
+                size: 50
+            }); 
+
+            $(".f-name").change(function () {
+                if ($(this).val() != "" && f1 == 0) {
+                    i = i + 25;
+                  $('.chart').data('easyPieChart').update(i);
+                    $('.perc').html(i + '%');
+                    f1++;
+                }
+                if ($(this).val() == "") {
+                    i = i - 25;
+                    $('.chart').data('easyPieChart').update(i);
+                    $('.perc').html(i + '%');
+                    f1= 0;
+                }
+            });
+            $(".l-name").change(function () {
+                if ($(this).val() != "" && f2 == 0) {
+                    i = i + 25;
+                  $('.chart').data('easyPieChart').update(i);
+                    $('.perc').html(i + '%');
+                    f2++;
+                }
+                if ($(this).val() == "") {
+                    i = i - 25;
+                    $('.chart').data('easyPieChart').update(i);
+                    $('.perc').html(i + '%');
+                    f2= 0;
+                }
+            });
+            $(".email").change(function () {
+                if ($(this).val() != "" && f3 == 0) {
+                    i = i + 25;
+                  $('.chart').data('easyPieChart').update(i);
+                    $('.perc').html(i + '%');
+                    f3++;
+                }
+                if ($(this).val() == "") {
+                    i = i - 25;
+                    $('.chart').data('easyPieChart').update(i);
+                    $('.perc').html(i + '%');
+                    f3= 0;
+                }
+            });
+            $("input[type='radio']").change(function () {
+                if ($(this).val() != "" && f4 == 0) {
+                    i = i + 25;
+                  $('.chart').data('easyPieChart').update(i);
+                    $('.perc').html(i + '%');
+                    f4++;
+                }
+                if ($(this).val() == "") {
+                    i = i - 25;
+                    $('.chart').data('easyPieChart').update(i);
+                    $('.perc').html(i + '%');
+                    f4= 0;
+                }
+            });
+
+        });
+    </script>
+
+
+</body>
+
+</html>
