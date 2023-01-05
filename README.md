@@ -1,3 +1,3 @@
 # QA-Internship
-Four internship tasks for QA position that must be organized in four git branches.
+Four internship tasks that must be organized in four git branches.
  
